@@ -184,7 +184,7 @@ if selected == 'Comparision':
         compare_df = data[data['Platform'].isin([platform1,platform2])]
         User_count = compare_df.groupby('Platform',as_index=False)['User_ID'].count()
         User_count = pd.DataFrame(User_count)
-        fig = px.pie(User_count, names='Platform', values='User_ID')
+        fig = px.pie(User_count, names='Platform', values='User_ID' , title= 'Platform User Comparision')
         st.plotly_chart(fig)
         post_per_day_dist = compare_df.groupby('Platform' , as_index= False)['Posts_Per_Day'].value_counts()
         post_per_day_dist = pd.DataFrame(post_per_day_dist)
