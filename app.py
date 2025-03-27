@@ -92,8 +92,7 @@ if selected == 'Register':
                     })
                     df = pd.concat([df, new_entry], ignore_index=True)
                     df.to_csv(Registered_user_file, index=False)
-                    st.success("Registration Successful! Redirecting to Login...")
-                    st.rerun()
+                    st.success("Registration Successful! ")
             else:
                 st.error("Please enter all the required details.")
 #Analysis
@@ -165,7 +164,7 @@ if selected == "Analysis":
 
 if selected == 'Data':
     st.title("Data")
-    st.subheader("Search Data")
+    st.subheader("Search Platform")
     Query = st.text_input("search").strip().lower()
     if Query:
         search_df =data[data['Platform'].str.lower().str.contains(Query)]
